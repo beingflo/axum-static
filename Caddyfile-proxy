@@ -1,0 +1,9 @@
+http://localhost:4001 {
+	reverse_proxy rust-embed:4001
+}
+
+http://localhost:4008 {
+	root * /srv
+  try_files {path} /index.html
+	file_server
+}

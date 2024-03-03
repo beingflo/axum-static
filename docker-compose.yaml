@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  caddy:
+    build:
+      context: .
+      dockerfile: Dockerfile-proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+  rust-embed:
+    build:
+      context: .
+      dockerfile: Dockerfile-rust-embed
+    restart: unless-stopped
+    ports:
+      - "4001:4001"
