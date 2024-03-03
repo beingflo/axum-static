@@ -1,0 +1,8 @@
+FROM rust:1.75
+
+WORKDIR /usr/src/axum-static
+COPY . .
+
+RUN cargo build --release
+
+CMD ["/usr/src/axum-static/target/release/axum-static"]

@@ -15,8 +15,9 @@ struct Assets;
 #[tokio::main]
 async fn main() {
     let app = Router::new().fallback(static_handler);
+    println!("Listening");
 
-    let addr = SocketAddr::from(([127, 0, 0, 1], 4000));
+    let addr = SocketAddr::from(([0, 0, 0, 0], 4001));
     let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
     axum::serve(listener, app).await.unwrap();
 }
