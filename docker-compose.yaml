@@ -8,6 +8,7 @@ services:
     restart: unless-stopped
     ports:
       - "80:80"
+      - "4008:4008"
   rust-embed:
     build:
       context: .
